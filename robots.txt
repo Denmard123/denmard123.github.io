@@ -1,5 +1,5 @@
 # robots.txt for https://denmard123.github.io/
-# Generated: 2026-03-18T09:57:22.499Z
+# Generated: 2026-03-18T10:07:22.367Z
 
 User-agent: *
 Allow: /
@@ -8,21 +8,14 @@ Allow: /
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /*.json$
-Disallow: /.cache.json
 
 # Allow AdSense bot
 User-agent: Mediapartners-Google
 Allow: /
 
-# Google-specific
+# Google bot
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
-
-# Bing-specific
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://denmard123.github.io/sitemap.xml
