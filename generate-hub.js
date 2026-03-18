@@ -3,31 +3,40 @@ const path = require('path');
 
 const USERNAME = 'denmard123';
 const BASE_URL = `https://${USERNAME}.github.io/`;
+const PROFILE_IMG = '63204258.jpg'; // Gambar Anda
 
 async function generateHub() {
     try {
         console.log('🚀 Menjalankan Generator SEO-Optimized Hub...');
+        
+        // Fetch data dengan sort updated agar repo terbaru selalu di atas
         const response = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`);
         const repos = await response.json();
 
-        const projects = repos.filter(repo => repo.name.toLowerCase() !== `${USERNAME}.github.io`.toLowerCase());
+        if (!Array.isArray(repos)) {
+            throw new Error('Gagal mengambil data dari GitHub API');
+        }
+
+        // Filter: Hanya ambil repo publik dan abaikan repo profile utama
+        const projects = repos.filter(repo => 
+            repo.name.toLowerCase() !== `${USERNAME}.github.io`.toLowerCase() && 
+            repo.fork === false // Menghindari clutter dari repo hasil fork orang lain
+        );
 
         let projectCards = '';
         let sitemapUrls = '';
         let jsonLdItems = [];
 
-        projects.forEach((repo, index) => {
+        projects.forEach((repo) => {
             const lastUpdate = new Date(repo.updated_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
             const targetUrl = repo.has_pages ? `${BASE_URL}${repo.name}/` : repo.html_url;
             
-            // UI Logic
             const isLive = repo.has_pages;
             const badgeLabel = isLive ? 'Live Project' : 'Source Code';
             const badgeStyle = isLive 
                 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
                 : 'bg-amber-500/10 text-amber-400 border-amber-500/20';
 
-            // HTML Card Generation
             projectCards += `
             <article class="relative group h-full">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
@@ -58,7 +67,6 @@ async function generateHub() {
                 </div>
             </article>\n`;
 
-            // Sitemap & JSON-LD Data
             if (isLive) {
                 const isoDate = new Date(repo.updated_at).toISOString().split('T')[0];
                 sitemapUrls += `  <url><loc>${targetUrl}</loc><lastmod>${isoDate}</lastmod><priority>0.8</priority></url>\n`;
@@ -72,24 +80,15 @@ async function generateHub() {
             }
         });
 
-        // FULL HTML WITH SEO OPTIMIZATION
         const htmlContent = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Den Mardiyana | Central Repository Hub</title>
+    <link rel="icon" type="image/jpeg" href="${PROFILE_IMG}">
     
-    <meta name="description" content="Portal resmi Den Mardiyana. Koleksi repositori GitHub, proyek fullstack development, dan live demo aplikasi web.">
-    <meta name="keywords" content="Den Mardiyana, DenMard123, Fullstack Developer, GitHub Hub, Web Developer Indonesia">
-    <meta name="author" content="Den Mardiyana">
-    <link rel="canonical" href="${BASE_URL}">
-    
-    <meta property="og:title" content="Den Mardiyana | Project Hub">
-    <meta property="og:description" content="Explore my digital universe and web projects.">
-    <meta property="og:url" content="${BASE_URL}">
-    <meta property="og:type" content="website">
-
+    <meta name="description" content="Portal resmi Den Mardiyana. Koleksi repositori GitHub dan live demo aplikasi web.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
@@ -99,8 +98,7 @@ async function generateHub() {
         .gradient-text { background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glow-bg { position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 100vh; 
                    background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.1), transparent 60%); z-index: -1; }
-        @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        article { animation: fade-in 0.6s ease-out forwards; }
+        .profile-ring { padding: 4px; background: linear-gradient(135deg, #60A5FA, #A78BFA); border-radius: 9999px; }
     </style>
 
     <script type="application/ld+json">
@@ -108,6 +106,7 @@ async function generateHub() {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Den Mardiyana",
+      "image": "${BASE_URL}${PROFILE_IMG}",
       "jobTitle": "Fullstack Developer",
       "url": "${BASE_URL}",
       "hasPart": ${JSON.stringify(jsonLdItems)}
@@ -117,16 +116,22 @@ async function generateHub() {
 <body>
     <div class="glow-bg"></div>
     
-    <header class="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
+    <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
+        <div class="flex justify-center mb-8">
+            <div class="profile-ring shadow-2xl shadow-blue-500/20 transition-transform hover:scale-105 duration-500">
+                <img src="${PROFILE_IMG}" alt="Den Mardiyana" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#020617]">
+            </div>
+        </div>
+
         <div class="inline-flex items-center gap-2 px-4 py-2 mb-10 text-[10px] font-black tracking-[0.4em] text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-2xl">
             <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-            System Online
+            Cloud Hub Active
         </div>
-        <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none">
+        <h1 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-none">
             Den Mardiyana<br><span class="gradient-text">Studio.</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
-            Kumpulan <span class="text-white">${projects.length} kode program dari repositori</span> aktif. Yang terintegrasi dengan GitHub Pages.
+            Menampilkan <span class="text-white">${projects.length} repositori</span> pilihan yang dikembangkan secara profesional.
         </p>
     </header>
 
@@ -137,31 +142,34 @@ async function generateHub() {
     </main>
 
     <footer class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-white/5">
-        <div class="flex flex-col items-center gap-4">
-            <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-4"></div>
-            <p class="text-[10px] text-slate-500 uppercase tracking-[0.5em] font-black">
-                © 2026 Den Mardiyana • Website Development
-            </p>
-        </div>
+        <p class="text-[10px] text-slate-500 uppercase tracking-[0.5em] font-black">
+            © 2026 Den Mardiyana • Fullstack Engineer
+        </p>
     </footer>
 </body>
 </html>`;
 
-        // 1. Tulis index.html
-        fs.writeFileSync('index.html', htmlContent);
-
-        // 2. Tulis sitemap.xml
-        const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+        // Bandingkan dengan file lama sebelum menulis (Optimasi Update)
+        const currentHtml = fs.existsSync('index.html') ? fs.readFileSync('index.html', 'utf8') : '';
+        
+        // Hanya tulis jika ada perubahan konten kartu atau jumlah proyek
+        if (currentHtml.length !== htmlContent.length || !currentHtml.includes(projects[0]?.name)) {
+            fs.writeFileSync('index.html', htmlContent);
+            
+            const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${BASE_URL}</loc><priority>1.0</priority></url>
 ${sitemapUrls}</urlset>`;
-        fs.writeFileSync('sitemap.xml', sitemapContent);
+            fs.writeFileSync('sitemap.xml', sitemapContent);
+            
+            const robotsContent = `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}sitemap.xml`;
+            fs.writeFileSync('robots.txt', robotsContent);
+            
+            console.log(`✅ Update Berhasil: Menambahkan ${projects.length} proyek ke Hub.`);
+        } else {
+            console.log('ℹ️ Tidak ada perubahan repositori terdeteksi. Skip update file.');
+        }
 
-        // 3. Tulis robots.txt
-        const robotsContent = `User-agent: *\nAllow: /\nSitemap: ${BASE_URL}sitemap.xml`;
-        fs.writeFileSync('robots.txt', robotsContent);
-
-        console.log(`✅ Sukses! Struktur SEO & Hub Digital telah diperbarui.`);
     } catch (error) {
         console.error('❌ Error Generasi:', error);
     }
