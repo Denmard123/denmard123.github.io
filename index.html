@@ -3,507 +3,709 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DenMard123 | Fullstack Developer Hub</title>
-    <meta name="description" content="Portal utama Den Mardiyana - Fullstack Developer. Koleksi repositori GitHub dan proyek live.">
+    <title>Den Mardiyana | Central Repository Hub</title>
+    
+    <meta name="description" content="Portal resmi Den Mardiyana. Koleksi repositori GitHub, proyek fullstack development, dan live demo aplikasi web.">
+    <meta name="keywords" content="Den Mardiyana, DenMard123, Fullstack Developer, GitHub Hub, Web Developer Indonesia">
+    <meta name="author" content="Den Mardiyana">
+    <link rel="canonical" href="https://denmard123.github.io/">
+    
+    <meta property="og:title" content="Den Mardiyana | Project Hub">
+    <meta property="og:description" content="Explore my digital universe and web projects.">
+    <meta property="og:url" content="https://denmard123.github.io/">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root { font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: #020617; color: #e2e8f0; overflow-x: hidden; }
-        .glass { background: rgba(30, 41, 59, 0.4); backdrop-filter: blur(12px); }
-        .gradient-text { background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-glow { position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; 
-                   background: radial-gradient(circle at 50% -10%, rgba(59, 130, 246, 0.15), transparent 70%); z-index: -1; }
-        /* Optimasi CLS */
-        .grid { min-height: 80vh; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+        .gradient-text { background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glow-bg { position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 100vh; 
+                   background: radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.1), transparent 60%); z-index: -1; }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        article { animation: fade-in 0.6s ease-out forwards; }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Den Mardiyana",
+      "jobTitle": "Fullstack Developer",
+      "url": "https://denmard123.github.io/",
+      "hasPart": [{"@type":"SoftwareApplication","name":"farmasi","url":"https://denmard123.github.io/farmasi/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"thrwheel","url":"https://denmard123.github.io/thrwheel/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"shippingManager","url":"https://denmard123.github.io/shippingManager/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"kasirPro","url":"https://denmard123.github.io/kasirPro/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"Dye","url":"https://denmard123.github.io/Dye/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"inject","url":"https://denmard123.github.io/inject/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"sanca","url":"https://denmard123.github.io/sanca/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"portfolio","url":"https://denmard123.github.io/portfolio/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"HabitTracker","url":"https://denmard123.github.io/HabitTracker/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"show-blog","url":"https://denmard123.github.io/show-blog/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"mardiyanaweb","url":"https://denmard123.github.io/mardiyanaweb/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"webmonitize","url":"https://denmard123.github.io/webmonitize/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"cardbox","url":"https://denmard123.github.io/cardbox/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"},{"@type":"SoftwareApplication","name":"fireWork","url":"https://denmard123.github.io/fireWork/","applicationCategory":"DeveloperApplication","operatingSystem":"Web"}]
+    }
+    </script>
 </head>
 <body>
-    <div class="bg-glow"></div>
-    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
-        <div class="inline-block px-4 py-1.5 mb-8 text-[10px] font-bold tracking-[0.3em] text-blue-400 uppercase bg-blue-400/10 border border-blue-400/20 rounded-full">
-            Main Repository Hub
+    <div class="glow-bg"></div>
+    
+    <header class="max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-10 text-[10px] font-black tracking-[0.4em] text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-2xl">
+            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+            System Online
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
-            Digital Universe <br><span class="gradient-text">DenMard123</span>
+        <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none">
+            Den Mardiyana<br><span class="gradient-text">Studio.</span>
         </h1>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Menghubungkan <span class="text-white font-semibold">22 proyek</span> digital melalui ekosistem GitHub Pages yang terindeks secara optimal.
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            Pusat kendali untuk <span class="text-white">22 repositori</span> aktif. Terintegrasi penuh dengan GitHub Pages untuk performa maksimal.
         </p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto px-6 pb-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">farmasi</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">statis web app public and admin</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 25 Feb 2026</span>
-                    <a href="https://denmard123.github.io/farmasi/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">farmasi</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">statis web app public and admin</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">25 Feb 2026</span>
+                        </div>
+                        <a href="https://denmard123.github.io/farmasi/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">thrwheel</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 17 Feb 2026</span>
-                    <a href="https://denmard123.github.io/thrwheel/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">thrwheel</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">17 Feb 2026</span>
+                        </div>
+                        <a href="https://denmard123.github.io/thrwheel/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">stikman</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">man on the flow</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 8 Feb 2026</span>
-                    <a href="https://github.com/Denmard123/stikman" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">stikman</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">man on the flow</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">8 Feb 2026</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/stikman" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">shippingManager</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">web app stock toko </p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 5 Feb 2026</span>
-                    <a href="https://denmard123.github.io/shippingManager/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">shippingManager</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">web app stock toko </p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">5 Feb 2026</span>
+                        </div>
+                        <a href="https://denmard123.github.io/shippingManager/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">kasirPro</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">web app kasir pembayaran, rekapan, qris, lunas, dan hutang. halaman statis</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 5 Feb 2026</span>
-                    <a href="https://denmard123.github.io/kasirPro/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">kasirPro</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">web app kasir pembayaran, rekapan, qris, lunas, dan hutang. halaman statis</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">5 Feb 2026</span>
+                        </div>
+                        <a href="https://denmard123.github.io/kasirPro/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">paralaxFuel</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">landing page + admin page</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 2 Feb 2026</span>
-                    <a href="https://github.com/Denmard123/paralaxFuel" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">paralaxFuel</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">landing page + admin page</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">2 Feb 2026</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/paralaxFuel" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">Dye</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">den mardiyana saputra</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 26 Nov 2025</span>
-                    <a href="https://denmard123.github.io/Dye/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">Dye</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">den mardiyana saputra</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">26 Nov 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/Dye/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">bloden</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 23 Nov 2025</span>
-                    <a href="https://github.com/Denmard123/bloden" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">bloden</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">23 Nov 2025</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/bloden" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">inject</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 10 Okt 2025</span>
-                    <a href="https://denmard123.github.io/inject/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">inject</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">10 Okt 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/inject/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">sanca</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Website game</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 10 Okt 2025</span>
-                    <a href="https://denmard123.github.io/sanca/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">sanca</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Website game</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">10 Okt 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/sanca/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">portfolio</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">tugas boot camp harisenin.com (portfolio html+css)</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 4 Okt 2025</span>
-                    <a href="https://denmard123.github.io/portfolio/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">portfolio</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">tugas boot camp harisenin.com (portfolio html+css)</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">4 Okt 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/portfolio/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">HabitTracker</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Catatan harian dan pengingat kegiatan</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 25 Agu 2025</span>
-                    <a href="https://denmard123.github.io/HabitTracker/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">HabitTracker</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Catatan harian dan pengingat kegiatan</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">25 Agu 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/HabitTracker/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">show blog</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Dy Blogg </p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 25 Agu 2025</span>
-                    <a href="https://denmard123.github.io/show-blog/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">show blog</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Dy Blogg </p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">25 Agu 2025</span>
+                        </div>
+                        <a href="https://denmard123.github.io/show-blog/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">dapur website</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 26 Feb 2025</span>
-                    <a href="https://github.com/Denmard123/dapur-website" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">dapur website</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">26 Feb 2025</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/dapur-website" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">mardiyanaweb</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 26 Okt 2024</span>
-                    <a href="https://denmard123.github.io/mardiyanaweb/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">mardiyanaweb</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">26 Okt 2024</span>
+                        </div>
+                        <a href="https://denmard123.github.io/mardiyanaweb/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">webmonitize</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 13 Nov 2023</span>
-                    <a href="https://denmard123.github.io/webmonitize/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">webmonitize</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">13 Nov 2023</span>
+                        </div>
+                        <a href="https://denmard123.github.io/webmonitize/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">Final Project Harisenin</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 1 Okt 2023</span>
-                    <a href="https://github.com/Denmard123/Final-Project-Harisenin" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">Final Project Harisenin</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">1 Okt 2023</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/Final-Project-Harisenin" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">TugasJs</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 6 Sep 2023</span>
-                    <a href="https://github.com/Denmard123/TugasJs" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">TugasJs</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">6 Sep 2023</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/TugasJs" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">belajar git</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan sistem web profesional oleh Den Mardiyana.</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 20 Agu 2023</span>
-                    <a href="https://github.com/Denmard123/belajar-git" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">belajar git</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Pengembangan aplikasi web modern dengan optimasi performa tinggi.</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">20 Agu 2023</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/belajar-git" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-amber-500/10 text-amber-400 border-amber-500/20 uppercase">
+                            Source Code
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-slate-800 text-slate-500 border-white/5 uppercase">
-                        Source Code
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">HsCSS</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">tugas CSS FSD 1, </p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 6 Agu 2023</span>
-                    <a href="https://github.com/Denmard123/HsCSS" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">HsCSS</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">tugas CSS FSD 1, </p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">6 Agu 2023</span>
+                        </div>
+                        <a href="https://github.com/Denmard123/HsCSS" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">cardbox</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">thumbnail cardvox</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 23 Jun 2023</span>
-                    <a href="https://denmard123.github.io/cardbox/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">cardbox</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">thumbnail cardvox</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">23 Jun 2023</span>
+                        </div>
+                        <a href="https://denmard123.github.io/cardbox/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
-            <article class="glass p-8 rounded-[2.5rem] border border-white/5 hover:border-blue-500/50 transition-all duration-300 group flex flex-col h-full">
-                <div class="flex justify-between items-start mb-8">
-                    <div class="p-4 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <article class="relative group h-full">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[2.5rem] opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div class="relative glass p-8 rounded-[2.5rem] border border-white/5 flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] px-3 py-1.5 rounded-xl border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 uppercase">
+                            Live Project
+                        </span>
                     </div>
-                    <span class="text-[10px] font-bold tracking-widest px-3 py-1 rounded-full border bg-blue-500/10 text-blue-400 border-blue-400/20 uppercase">
-                        Live Project
-                    </span>
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize">fireWork</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Aplikasi web sederhana kembang api</p>
-                </div>
-                <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] text-slate-500 font-medium">Update: 14 Jun 2023</span>
-                    <a href="https://denmard123.github.io/fireWork/" target="_blank" rel="noopener" class="flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-white transition-colors">
-                        Explore <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    
+                    <div class="flex-grow">
+                        <h2 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors capitalize tracking-tight">fireWork</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">Aplikasi web sederhana kembang api</p>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Last Release</span>
+                            <span class="text-xs text-slate-300">14 Jun 2023</span>
+                        </div>
+                        <a href="https://denmard123.github.io/fireWork/" target="_blank" rel="noopener" class="p-3 rounded-full bg-white/5 text-white hover:bg-white hover:text-black transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </article>
 
         </div>
     </main>
 
-    <footer class="max-w-7xl mx-auto px-6 pb-12 text-center border-t border-white/5 pt-12">
-        <p class="text-[10px] text-slate-500 uppercase tracking-[0.4em] font-bold">
-            © 2026 Den Mardiyana • Fullstack Developer
-        </p>
+    <footer class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-white/5">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-transparent rounded-full mb-4"></div>
+            <p class="text-[10px] text-slate-500 uppercase tracking-[0.5em] font-black">
+                © 2026 Den Mardiyana • Fullstack Engineer
+            </p>
+        </div>
     </footer>
 </body>
 </html>
