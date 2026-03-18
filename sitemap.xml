@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://denmard123.github.io/</loc><priority>1.0</priority></url>
-  <url><loc>https://denmard123.github.io/cardbox/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/Dye/</loc><priority>0.8</priority></url>
   <url><loc>https://denmard123.github.io/farmasi/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/fireWork/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/HabitTracker/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/inject/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/kasirPro/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/mardiyanaweb/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/portfolio/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/sanca/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/shippingManager/</loc><priority>0.8</priority></url>
-  <url><loc>https://denmard123.github.io/show-blog/</loc><priority>0.8</priority></url>
   <url><loc>https://denmard123.github.io/thrwheel/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/shippingManager/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/kasirPro/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/Dye/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/inject/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/sanca/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/portfolio/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/HabitTracker/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/show-blog/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/mardiyanaweb/</loc><priority>0.8</priority></url>
   <url><loc>https://denmard123.github.io/webmonitize/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/cardbox/</loc><priority>0.8</priority></url>
+  <url><loc>https://denmard123.github.io/fireWork/</loc><priority>0.8</priority></url>
 </urlset>
