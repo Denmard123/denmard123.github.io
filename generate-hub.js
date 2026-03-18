@@ -465,7 +465,7 @@ function generateHTML(projects) {
     <header class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
         <div class="flex justify-center mb-8">
             <div class="profile-ring shadow-2xl shadow-blue-500/20 transition-transform hover:scale-105 duration-500">
-                <img src="${CONFIG.PROFILE_IMG}" alt="Den Mardiyana - Fullstack Developer" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#020617]" width="128" height="128" loading="eager">
+                <img src="${CONFIG.PROFILE_IMG}" alt="Den Mardiyana - Website Developer" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-[#020617]" width="128" height="128" loading="eager">
             </div>
         </div>
 
@@ -477,7 +477,7 @@ function generateHTML(projects) {
             Den Mardiyana<br><span class="gradient-text">Studio.</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
-            Menampilkan <span class="text-white">${projects.length} repositori</span> pilihan yang dikembangkan secara profesional.
+            Menampilkan <span class="text-white">${projects.length} repositori</span> yang telah dibangun.
         </p>
     </header>
 
@@ -503,7 +503,7 @@ function generateHTML(projects) {
 
     <footer class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-white/5">
         <p class="text-[10px] text-slate-500 uppercase tracking-[0.5em] font-black">
-            © ${new Date().getFullYear()} Den Mardiyana • Fullstack Engineer
+            © ${new Date().getFullYear()} Den Mardiyana • Website developer
         </p>
     </footer>
 </body>
