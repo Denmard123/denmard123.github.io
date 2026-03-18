@@ -391,7 +391,7 @@ function generateHTML(projects) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Den Mardiyana | Central Repository Hub - Fullstack Developer Portfolio</title>
+    <title>Den Mardiyana | Central Repository Hub</title>
     <link rel="icon" type="image/jpeg" href="${CONFIG.PROFILE_IMG}">
     <link rel="canonical" href="${CONFIG.BASE_URL}">
 
@@ -449,12 +449,12 @@ function generateHTML(projects) {
       "@type": "Person",
       "name": "Den Mardiyana",
       "image": "${CONFIG.BASE_URL}${CONFIG.PROFILE_IMG}",
-      "jobTitle": "Fullstack Developer",
-      "description": "Fullstack Developer spesialisasi dalam pengembangan aplikasi web modern",
+      "jobTitle": "Website Developer",
+      "description": "Website Developer spesialisasi dalam pengembangan web modern",
       "url": "${CONFIG.BASE_URL}",
       "sameAs": [
         "https://github.com/${CONFIG.USERNAME}",
-        "https://linkedin.com/in/den-mardiyana-saputra-0628141b7/"
+        "https://www.linkedin.com/in/den-mardiyana-saputra/"
       ]
     }
     </script>
