@@ -103,176 +103,34 @@ function sanitize(text) {
 }
 
 // ========================================
-// ADSENSE SNIPPET (For All Pages)
-// ========================================
-
-function generateAdSenseSnippet() {
-    return `<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdSense Global Snippet</title>
-    
-    <!-- ============================================ -->
-    <!-- GOOGLE ADSENSE - OWNERSHIP VERIFICATION -->
-    <!-- ============================================ -->
-    <meta name="google-adsense-account" content="${CONFIG.ADSENSE_CLIENT}">
-    
-    <!-- Google AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CONFIG.ADSENSE_CLIENT}"
-         crossorigin="anonymous"></script>
-</head>
-<body>
-    <!-- This file can be included in other pages -->
-    
-    <!-- AdSense Auto Ads will work on any page that includes this script -->
-    
-    <!-- Manual Ad Unit Template -->
-    <div class="adsense-container" style="margin: 20px auto; max-width: 728px; text-align: center;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="${CONFIG.ADSENSE_CLIENT}"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-</body>
-</html>`;
-}
-
-// ========================================
-// ADSENSE INJECTION SCRIPT (For Existing Pages)
-// ========================================
-
-function generateAdSenseInjector() {
-    return `<!-- AdSense Injector Script -->
-<!-- Add this to the <head> of your GitHub Pages -->
-<!-- File: adsense-injector.js -->
-
-(function() {
-    // Ownership verification meta tag
-    var meta = document.createElement('meta');
-    meta.name = 'google-adsense-account';
-    meta.content = '${CONFIG.ADSENSE_CLIENT}';
-    document.head.appendChild(meta);
-    
-    // AdSense script
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CONFIG.ADSENSE_CLIENT}';
-    script.crossOrigin = 'anonymous';
-    document.head.appendChild(script);
-    
-    // Optional: Insert ad unit after page load
-    window.addEventListener('load', function() {
-        // Find good insertion point (after first h1 or main content)
-        var insertPoint = document.querySelector('h1') || document.querySelector('main') || document.body;
-        
-        if (insertPoint) {
-            var adContainer = document.createElement('div');
-            adContainer.style.margin = '20px auto';
-            adContainer.style.maxWidth = '728px';
-            adContainer.style.textAlign = 'center';
-            
-            var adUnit = document.createElement('ins');
-            adUnit.className = 'adsbygoogle';
-            adUnit.style.display = 'block';
-            adUnit.setAttribute('data-ad-client', '${CONFIG.ADSENSE_CLIENT}');
-            adUnit.setAttribute('data-ad-format', 'auto');
-            adUnit.setAttribute('data-full-width-responsive', 'true');
-            
-            adContainer.appendChild(adUnit);
-            
-            // Insert after h1 or at top of main
-            if (insertPoint.tagName === 'H1') {
-                insertPoint.parentNode.insertBefore(adContainer, insertPoint.nextSibling);
-            } else {
-                insertPoint.insertBefore(adContainer, insertPoint.firstChild);
-            }
-            
-            // Push ad
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-        }
-    });
-})();`;
-}
-
-// ========================================
-// SITEMAP GENERATION (OPTIMIZED)
+// SITEMAP GENERATION (FIXED & VALIDATED)
 // ========================================
 
 function generateSitemap(projects) {
     const now = new Date().toISOString().split('T')[0];
     let urls = '';
     
-    // Homepage
-    urls += `  <url>
-    <loc>${CONFIG.BASE_URL}</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>\n`;
+    // Homepage (Priority 1.0)
+    urls += `  <url>\n    <loc>${CONFIG.BASE_URL}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
     
-    // AdSense snippet page
-    urls += `  <url>
-    <loc>${CONFIG.BASE_URL}adsense-snippet.html</loc>
-    <lastmod>${now}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>\n`;
+    // Only Live GitHub Pages (TIDAK termasuk external github.com links)
+    const liveProjects = projects.filter(repo => repo.has_pages);
     
-    // All repositories
-    const liveProjects = [];
-    const sourceProjects = [];
-    
-    projects.forEach(repo => {
-        if (repo.has_pages) {
-            liveProjects.push(repo);
-        } else {
-            sourceProjects.push(repo);
-        }
-    });
-    
-    // Live GitHub Pages (PRIORITY)
     liveProjects.forEach(repo => {
         const lastmod = new Date(repo.updated_at).toISOString().split('T')[0];
         const url = `${CONFIG.BASE_URL}${repo.name}/`;
         
-        urls += `  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>\n`;
+        urls += `  <url>\n    <loc>${url}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
     });
     
-    // Source repos (lower priority, external links)
-    sourceProjects.forEach(repo => {
-        const lastmod = new Date(repo.updated_at).toISOString().split('T')[0];
-        
-        urls += `  <url>
-    <loc>${repo.html_url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>\n`;
-    });
-    
-    const totalUrls = projects.length + 2; // +2 for homepage + adsense snippet
+    const totalUrls = liveProjects.length + 1;
     console.log(`📄 Sitemap entries: ${totalUrls} URLs`);
     console.log(`   - Homepage: 1`);
-    console.log(`   - Live Pages: ${liveProjects.length}`);
-    console.log(`   - Source Repos: ${sourceProjects.length}`);
-    console.log(`   - AdSense Snippet: 1`);
+    console.log(`   - Live GitHub Pages: ${liveProjects.length}`);
     
+    // CRITICAL: Proper XML formatting with correct encoding
     return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}</urlset>`;
 }
 
@@ -291,28 +149,21 @@ Allow: /
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /*.json$
-Disallow: /.cache.json
 
 # Allow AdSense bot
 User-agent: Mediapartners-Google
 Allow: /
 
-# Google-specific
+# Google bot
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
-
-# Bing-specific
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
 
 # Sitemap location
 Sitemap: ${CONFIG.BASE_URL}sitemap.xml`;
 }
 
 // ========================================
-// HTML GENERATION (HOMEPAGE WITH ADSENSE)
+// HTML GENERATION (WITH ADSENSE)
 // ========================================
 
 function generateHTML(projects) {
@@ -405,7 +256,7 @@ function generateHTML(projects) {
          crossorigin="anonymous"></script>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portal resmi Den Mardiyana - Fullstack Developer. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web modern dengan teknologi terkini.">
+    <meta name="description" content="Portal resmi Den Mardiyana - Website Developer. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web modern dengan teknologi terkini.">
     <meta name="keywords" content="den mardiyana, fullstack developer, web developer, portfolio, github projects, javascript, react, node.js, indonesia developer">
     <meta name="author" content="Den Mardiyana">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -413,14 +264,14 @@ function generateHTML(projects) {
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="${CONFIG.BASE_URL}">
-    <meta property="og:title" content="Den Mardiyana - Fullstack Developer Portfolio">
+    <meta property="og:title" content="Den Mardiyana - Website Developer">
     <meta property="og:description" content="Portal resmi Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
     <meta property="og:image" content="${CONFIG.BASE_URL}${CONFIG.PROFILE_IMG}">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="${CONFIG.BASE_URL}">
-    <meta property="twitter:title" content="Den Mardiyana - Fullstack Developer Portfolio">
+    <meta property="twitter:title" content="Den Mardiyana - Website Developer Portfolio">
     <meta property="twitter:description" content="Portal resmi Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
     <meta property="twitter:image" content="${CONFIG.BASE_URL}${CONFIG.PROFILE_IMG}">
     
@@ -477,7 +328,7 @@ function generateHTML(projects) {
             Den Mardiyana<br><span class="gradient-text">Studio.</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">
-            Menampilkan <span class="text-white">${projects.length} repositori</span> yang telah dibangun.
+            Menampilkan <span class="text-white">${projects.length} repositori</span> pilihan yang telah di bangun.
         </p>
     </header>
 
@@ -503,7 +354,7 @@ function generateHTML(projects) {
 
     <footer class="max-w-5xl mx-auto px-6 py-20 text-center border-t border-white/5">
         <p class="text-[10px] text-slate-500 uppercase tracking-[0.5em] font-black">
-            © ${new Date().getFullYear()} Den Mardiyana • Website developer
+            © ${new Date().getFullYear()} Den Mardiyana • Website Developer
         </p>
     </footer>
 </body>
@@ -516,12 +367,12 @@ function generateHTML(projects) {
 
 async function generateHub() {
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('🚀 SEO-Optimized Hub Generator v2.3');
-    console.log('   With Universal AdSense Integration');
+    console.log('🚀 SEO-Optimized Hub Generator v2.4');
+    console.log('   GSC Sitemap Fixed Edition');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
     console.log(`🌐 Base URL: ${CONFIG.BASE_URL}`);
     console.log(`💰 AdSense: ${CONFIG.ADSENSE_CLIENT}`);
-    console.log(`📁 Output: index.html, sitemap.xml, robots.txt, adsense files\n`);
+    console.log(`📁 Output: index.html, sitemap.xml, robots.txt\n`);
     
     let repos = null;
     
@@ -559,54 +410,58 @@ async function generateHub() {
         const htmlContent = generateHTML(projects);
         const sitemapContent = generateSitemap(projects);
         const robotsContent = generateRobots();
-        const adsenseSnippet = generateAdSenseSnippet();
-        const adsenseInjector = generateAdSenseInjector();
         
-        // Write main files
-        fs.writeFileSync('index.html', htmlContent, 'utf8');
-        fs.writeFileSync('sitemap.xml', sitemapContent, 'utf8');
-        fs.writeFileSync('robots.txt', robotsContent, 'utf8');
-        
-        // Write AdSense helper files
-        fs.writeFileSync('adsense-snippet.html', adsenseSnippet, 'utf8');
-        fs.writeFileSync('adsense-injector.js', adsenseInjector, 'utf8');
+        // Write with proper encoding
+        fs.writeFileSync('index.html', htmlContent, { encoding: 'utf8' });
+        fs.writeFileSync('sitemap.xml', sitemapContent, { encoding: 'utf8' });
+        fs.writeFileSync('robots.txt', robotsContent, { encoding: 'utf8' });
         
         console.log('✅ index.html generated (with AdSense)');
-        console.log('✅ sitemap.xml generated (all repos + adsense files)');
-        console.log('✅ robots.txt generated (Mediapartners-Google allowed)');
-        console.log('✅ adsense-snippet.html generated (standalone page)');
-        console.log('✅ adsense-injector.js generated (for other pages)');
+        console.log('✅ sitemap.xml generated (GSC-ready, UTF-8 encoded)');
+        console.log('✅ robots.txt generated');
         
         console.log(`\n📈 Statistics:`);
         console.log(`   Total projects: ${projects.length}`);
         console.log(`   Live GitHub Pages: ${projects.filter(p => p.has_pages).length}`);
         console.log(`   Source repos: ${projects.filter(p => !p.has_pages).length}`);
-        console.log(`   Sitemap URLs: ${projects.length + 2}`);
-        console.log(`   AdSense placements (homepage): ${Math.floor(projects.length / 6) + 1}`);
+        console.log(`   Sitemap URLs: ${projects.filter(p => p.has_pages).length + 1}`);
+        console.log(`   AdSense placements: ${Math.floor(projects.length / 6) + 1}`);
         
         console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
         console.log('✨ Generation completed successfully!');
         console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
         
-        console.log('📋 NEXT STEPS FOR ADSENSE ON ALL PAGES:');
+        console.log('📋 FIX STEPS FOR GSC SITEMAP ERROR:');
         console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-        console.log('1. 📤 Upload all generated files to GitHub');
-        console.log('2. 🔧 Add this to ALL your GitHub Pages HTML files:');
-        console.log('   <script src="https://denmard123.github.io/adsense-injector.js"></script>');
-        console.log('   (Place before </body> tag)');
+        console.log('1. 📤 Upload semua file ke GitHub:');
+        console.log('   git add .');
+        console.log('   git commit -m "Fix sitemap.xml encoding"');
+        console.log('   git push origin main');
         console.log('');
-        console.log('3. ✅ Verify AdSense approval');
-        console.log(`4. 🗺️  Submit sitemap to GSC: ${CONFIG.BASE_URL}sitemap.xml`);
-        console.log(`5. 🤖 Test robots.txt: ${CONFIG.BASE_URL}robots.txt`);
+        console.log('2. ⏳ Tunggu 2-5 menit (GitHub Pages deploy)');
         console.log('');
-        console.log('🔍 Test URLs:');
-        console.log(`   Homepage: ${CONFIG.BASE_URL}`);
-        console.log(`   AdSense Snippet: ${CONFIG.BASE_URL}adsense-snippet.html`);
-        console.log(`   Injector Script: ${CONFIG.BASE_URL}adsense-injector.js`);
-        console.log(`   Sitemap: ${CONFIG.BASE_URL}sitemap.xml\n`);
+        console.log('3. ✅ Test sitemap di browser:');
+        console.log(`   ${CONFIG.BASE_URL}sitemap.xml`);
+        console.log('   (Harus tampil XML, bukan 404)');
+        console.log('');
+        console.log('4. 🔍 Validate sitemap:');
+        console.log('   https://www.xml-sitemaps.com/validate-xml-sitemap.html');
+        console.log('');
+        console.log('5. 🗺️  Submit ulang ke GSC:');
+        console.log('   Google Search Console → Peta Situs');
+        console.log('   Delete sitemap lama (jika ada)');
+        console.log(`   Submit: ${CONFIG.BASE_URL}sitemap.xml`);
+        console.log('');
+        console.log('6. ⏰ Tunggu 24-48 jam untuk indexing\n');
         
-        console.log('💡 PRO TIP: For automatic injection, add this line to your');
-        console.log('   GitHub Pages build process or template file.\n');
+        console.log('🔧 TROUBLESHOOTING:');
+        console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+        console.log('Jika masih error "Tidak dapat membaca":');
+        console.log('• Pastikan file sitemap.xml ada di root repo');
+        console.log('• Check GitHub Pages setting: Settings → Pages');
+        console.log('• Source harus: Deploy from branch (main)');
+        console.log('• Folder harus: / (root)');
+        console.log(`• Test manual: curl ${CONFIG.BASE_URL}sitemap.xml\n`);
         
     } catch (writeError) {
         throw new Error(`File write error: ${writeError.message}`);
