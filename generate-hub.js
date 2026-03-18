@@ -37,11 +37,11 @@ async function generateHub() {
             </a>\n`;
         });
 
-        const templatePath = path.join(__dirname, 'template.html');
+        const templatePath = path.join(__dirname, '/template.html');
         if (fs.existsSync(templatePath)) {
             const template = fs.readFileSync(templatePath, 'utf8');
             const finalHtml = template.replace('', projectCards);
-            fs.writeFileSync('index.html', finalHtml);
+            fs.writeFileSync('/index.html', finalHtml);
             console.log(`✅ Berhasil mengupdate index.html dengan ${projects.length} proyek.`);
         }
     } catch (error) {
