@@ -6,20 +6,24 @@ const BASE_URL = `https://${USERNAME}.github.io/`;
 
 async function generateHub() {
     try {
+        console.log('Memulai sinkronisasi proyek...');
         const response = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100&sort=updated`);
         const repos = await response.json();
 
+        // Filter: Jangan masukkan repo utama ke dalam daftar proyek
         const projects = repos.filter(repo => repo.name.toLowerCase() !== `${USERNAME}.github.io`.toLowerCase());
 
         let projectCards = '';
         projects.forEach(repo => {
             const lastUpdate = new Date(repo.updated_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+            
+            // Logika URL: Gunakan GitHub Pages jika aktif, jika tidak gunakan link Repo
             const targetUrl = repo.has_pages ? `${BASE_URL}${repo.name}/` : repo.html_url;
             const badgeLabel = repo.has_pages ? 'Active Pages' : 'Source Code';
             const badgeClass = repo.has_pages ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-500/20 text-slate-400';
 
             projectCards += `
-            <a href="${targetUrl}" target="_blank" class="glass p-8 rounded-[2rem] flex flex-col justify-between group">
+            <a href="${targetUrl}" target="_blank" class="glass p-8 rounded-[2rem] flex flex-col justify-between group h-full">
                 <div>
                     <div class="flex justify-between items-center mb-6">
                         <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
@@ -37,12 +41,20 @@ async function generateHub() {
             </a>\n`;
         });
 
-        const templatePath = path.join(__dirname, '${BASE_URL}${repo.name}/template.html');
+        // Path yang benar: langsung cari template.html di root
+        const templatePath = path.join(__dirname, 'template.html');
+        
         if (fs.existsSync(templatePath)) {
             const template = fs.readFileSync(templatePath, 'utf8');
+            
+            // PERBAIKAN: Ganti placeholder spesifik yang ada di template.html Anda
             const finalHtml = template.replace('', projectCards);
-            fs.writeFileSync('${BASE_URL}${repo.name}/index.html', finalHtml);
+            
+            // Tulis ke index.html di root
+            fs.writeFileSync('index.html', finalHtml);
             console.log(`✅ Berhasil mengupdate index.html dengan ${projects.length} proyek.`);
+        } else {
+            console.error('❌ Template tidak ditemukan! Pastikan file bernama template.html');
         }
     } catch (error) {
         console.error('❌ Error:', error);
