@@ -2,6 +2,12 @@ name: Auto-Update Hub
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *' # Berjalan otomatis setiap hari jika ada repo baru
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,6 +23,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          git add index.html sitemap.xml
+          git add index.html sitemap.xml robots.txt
           git commit -m "Auto-update Hub and SEO Sitemap [skip ci]" || echo "No changes"
           git push
