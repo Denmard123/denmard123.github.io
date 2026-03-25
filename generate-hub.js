@@ -256,8 +256,8 @@ function generateHTML(projects) {
          crossorigin="anonymous"></script>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portal resmi Den Mardiyana - Website Developer. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web modern dengan teknologi terkini.">
-    <meta name="keywords" content="den mardiyana, fullstack developer, web developer, portfolio, github projects, javascript, react, node.js, indonesia developer">
+    <meta name="description" content="Portal Program Den Mardiyana - Website Developer. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web modern dengan teknologi terkini.">
+    <meta name="keywords" content="den mardiyana, fullstack developer, web developer, portfolio, github projects, javascript, Frontend, node.js, indonesia developer">
     <meta name="author" content="Den Mardiyana">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
@@ -265,14 +265,14 @@ function generateHTML(projects) {
     <meta property="og:type" content="website">
     <meta property="og:url" content="${CONFIG.BASE_URL}">
     <meta property="og:title" content="Den Mardiyana - Website Developer">
-    <meta property="og:description" content="Portal resmi Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
+    <meta property="og:description" content="Portal Program Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
     <meta property="og:image" content="${CONFIG.BASE_URL}${CONFIG.PROFILE_IMG}">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="${CONFIG.BASE_URL}">
     <meta property="twitter:title" content="Den Mardiyana - Website Developer Portfolio">
-    <meta property="twitter:description" content="Portal resmi Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
+    <meta property="twitter:description" content="Portal Program Den Mardiyana. Koleksi ${projects.length} repositori GitHub dan live demo aplikasi web.">
     <meta property="twitter:image" content="${CONFIG.BASE_URL}${CONFIG.PROFILE_IMG}">
     
     <!-- Preconnect for performance -->
