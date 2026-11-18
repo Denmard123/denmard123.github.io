@@ -1,5 +1,5 @@
 # robots.txt for https://denmard123.github.io/
-# Generated: 2026-11-17T05:59:01.247Z
+# Generated: 2026-11-18T05:28:43.176Z
 
 User-agent: *
 Allow: /
